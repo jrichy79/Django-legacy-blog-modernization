@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   script.onload = () => {
     tinymce.init({
-	base_url: '/static/js/tinymce',
-	suffix: '.min',
+      base_url: '/static/js/tinymce',
+      suffix: '.min',
       selector: '#id_body',
-      plugins: 'print preview importcss tinydrive searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists  wordcount imagetools textpattern noneditable help charmap quickbars emoticons blockquote',
-      menubar: 'file edit view insert format tools table tc help',
-      toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
+      plugins: 'preview importcss searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help quickbars emoticons',
+      menubar: 'file edit view insert format tools table help',
+      toolbar: 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen preview save | image media template link anchor codesample | ltr rtl',
       autosave_ask_before_unload: true,
       autosave_interval: '30s',
       autosave_prefix: '{path}{query}-{id}-',
@@ -24,15 +24,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
       height: 600,
       image_caption: true,
       quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
-      noneditable_noneditable_class: 'mceNonEditable',
       toolbar_mode: 'sliding',
-      spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
-      tinycomments_mode: 'embedded',
-      content_style: '.mymention{ color: gray; }',
-      contextmenu: 'link image in',
+      contextmenu: 'link image table',
       a11y_advanced_options: true,
-      mentions_selector: '.mymention',
-      mentions_item_type: 'profile',
       init_instance_callback: function (editor) {
         editor.dom.addClass(editor.dom.select('img'), 'img-fluid');
       }
