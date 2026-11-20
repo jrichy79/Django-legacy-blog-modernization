@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   console.log("id : id_body");
   let script = document.createElement('script');
-  script.setAttribute('src', 'https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js');
+  script.setAttribute('src', '/static/js/tinymce/tinymce.min.js');
   script.setAttribute('referrerpolicy', 'origin');
   document.head.appendChild(script);
 
   script.onload = () => {
     tinymce.init({
+	base_url: '/static/js/tinymce',
+	suffix: '.min',
       selector: '#id_body',
       plugins: 'print preview importcss tinydrive searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists  wordcount imagetools textpattern noneditable help charmap quickbars emoticons blockquote',
       menubar: 'file edit view insert format tools table tc help',
